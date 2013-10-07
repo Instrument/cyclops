@@ -22,18 +22,17 @@
 	cyclops.loadCurves(rollovers);
 
 	// Add the new curve to JQuery
-	$.easing.kviz = cyclops.getCurve("kviz8080");
+	$.easing.cyclops = cyclops.getCurve("roll-over-scale");
 
 	$(document).on("ready", function() {
 
 		// Use the curve with the JQuery animate function.
-
 		$("#buttonExample").on("mouseenter", function() {
-			$("#buttonExample").stop().animate({"width" : 400}, rollovers["kviz8080"].duration , "kviz");
+			$("#buttonExample").stop().animate({"width" : 400}, rollovers["roll-over-scale"].duration / 2, "cyclops");
 		});
 
 		$("#buttonExample").on("mouseleave", function() {
-			$("#buttonExample").stop().animate({"width" : 300}, rollovers["kviz8080"].duration , "kviz");
+			$("#buttonExample").stop().animate({"width" : 300}, rollovers["roll-over-scale"].duration, "cyclops");
 		});
 
 	});
