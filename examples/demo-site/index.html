@@ -1,0 +1,56 @@
+<html>
+<head>
+	<style>
+	#buttonExample {
+		background:#a0a0a0;
+		position:absolute;
+		width:300px;
+		height:50px;
+		text-align:center;
+	}
+
+	#dropper{
+		width:300px;
+		height:300px;
+		background:#cccccc;
+		border:1px solid #909090;
+	}
+
+	#
+
+	</style>
+
+	<script src="roll-over-curve.js"></script>
+	<script src="../../js/cyclops.js"></script>
+	<script src="jquery.js"></script>
+
+	<script>
+
+	// Load the curve data
+	cyclops.loadCurves(rollovers);
+
+	// Add the new curve to JQuery
+	$.easing.kviz = cyclops.getCurve("kviz8080");
+
+	$(document).on("ready", function() {
+
+		// Use the curve with the JQuery animate function.
+
+		$("#buttonExample").on("mouseenter", function() {
+			$("#buttonExample").stop().animate({"width" : 400}, rollovers["tims-8080"].duration * 1000, "kviz");
+		});
+
+		$("#buttonExample").on("mouseleave", function() {
+			$("#buttonExample").stop().animate({"width" : 300}, rollovers["tims-8080"].duration * 1000, "kviz");
+		});
+
+	});
+
+	</script>
+</head>
+
+<body>
+	<div id="dropper"></div>
+	<div id="buttonExample"></div>
+</body>
+</html>
