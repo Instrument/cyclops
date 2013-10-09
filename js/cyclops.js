@@ -244,13 +244,25 @@ var cyclops = function() {
     return output;
   }
 
+  function ensureNumber(q) {
+    return (isNaN(q) || !isFinite(q)) ? 0 : q;
+  }
+
+  function vectorEnsureNumber(q) {
+    for (var u = 0; u < q.length; u++) {
+      q[u] = ensureNumber(q[u]);
+    }
+    
+    return q;
+  }
+
   function boundVectorData(input, bounds) {
     var output = [];
     var min = bounds[0];
     var max = bounds[1];
 
     for(var i = 0; i < input.length; i++){
-      output.push( (input[i] - min[i]) / (max[i] - min[i]) );
+      output.push(ensureNumber((input[i] - min[i]) / (max[i] - min[i])));
     }
 
     return output;
@@ -410,7 +422,7 @@ var cyclops = function() {
     var curve = buildCurve(values);
     var func = function(t) {
       var index = t * values.duration + values.start;
-      return curve(index);
+      return vectorEnsureNumber(curve(index));
     }
 
     values.original = curve;
