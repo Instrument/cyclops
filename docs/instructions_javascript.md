@@ -26,7 +26,7 @@ To get a curve from cyclops, use the following method:
 **Arguments:**
 
 1. `Curve Name` - The curve name is set in the Cyclops AfterEffects UI so you will need to coordinate with the motion artist if you are't the one working on the motion.
-2. `Parameter Index` _(optional)_ - Many properties in AfterEffects are multi-dimensional (for example, position data includes an x, y, and z component).  As a result, there may be more than one property of interest for a given curve.  By default the zeroth property will be used.
+2. `Parameter Index` _(optional)_ - Many properties in AfterEffects have multiple components (for example, position data includes an x, y, and z component).  As a result, there may be more than one property of interest for a given curve.  By default the zeroth property will be used.
 
 The function returned from `cyclops.getCurve` accepts a single floating point value from zero to one representing time, and returns a normalized value representing the curve value at that point in time.  By using normalized values, the result of the curve function can be scaled to any arbitrary range, including scaling the value back to the original range from the AfterEffects composition (see `min` and `max` values in the Curve Properties list below).
 
@@ -47,7 +47,7 @@ For reference, here are the various properties associated with each JSON blob ex
 
 * `duration` - the duration of the entire curve, in milliseconds
 * `startTime` - the time within the AfterEffects composition of the first key frame, in milliseconds
-* `min` - An array of values that represent the minimum for each value component (remember, values in AfterEffects can be multi-dimensional).  These values are not normalized and represent the values as they appear in aftereffects.  Units will vary depending on the property (position may be in pixels, scale in percentage, etc).
+* `min` - An array of values that represent the minimum for each value component (remember, values in AfterEffects can have more than one component).  These values are not normalized and represent the values as they appear in aftereffects.  Units will vary depending on the property (position may be in pixels, scale in percentage, etc).
 * `max` - Just like `min` but is the list of the maximum values.
 * `begin` - Just like `min` but is the list of values at the **start** of the curve.
 * `end` - Just like `min` but is the list of values at the **end** of the curve.

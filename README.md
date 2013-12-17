@@ -23,17 +23,17 @@ The motion data is stored as a JSON that captures individual per-frame values fo
 
 > Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use througout a website.
 
-It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lenghty sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like Flash or Swify.
+It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lenghty sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like [Flash](http://www.adobe.com/products/flash.html), [Swiffy](https://www.google.com/doubleclick/studio/swiffy/) or just use pre-rendered video.
 
-These effects can be adjusted dynamically and applied to any property via JavaScript, but the dynamics of the values over time will match the original animation from AfterEffects.  Think of Cyclops curves just like the handful of common easing functions, but the behavior of the easing is completely customizable.
+Once loaded in JavaScript, curves can be adjusted dynamically and applied to any property via JavaScript, but the dynamics (the change over time) will match the original animation from AfterEffects.  Think of Cyclops curves just like the handful of standard easing functions, but the behavior of the easing is completely customizable using AfterEffects as the content creation tool.
 
 
 ### Usage
 
 While this will vary greatly depending on the specifics of your team structure, project, and deployment process, the basics are as follows:
 
-1. Install the Cyclops AfterEffects script.
+1. Install the [Cyclops AfterEffects script](docs/instructions_aftereffects.md).
 2. Create some motion
 3. Export the motion
-4. Load the motion data via JavaScript
+4. [Load the motion data via JavaScript](docs/instructions_javascript.md).
 5. Animate HTML elements using the motion.
