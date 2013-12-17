@@ -21,7 +21,7 @@ The motion data is stored as a JSON that captures individual per-frame values fo
 ### Cyclops != AfterEffects Player
 
 
-	Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use througout a website.
+> Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use througout a website.
 
 It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lenghty sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like Flash or Swify.
 
