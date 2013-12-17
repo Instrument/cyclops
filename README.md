@@ -1,102 +1,39 @@
-a tool to export AfterEffects motion for use in JavaScript
+# Cyclops
 
-Setup
-=====
+A tool to export AfterEffects motion for use in JavaScript.  Cyclops aims to solve the following problems commonly associated with motion on the web:
 
-There are two main components in Cyclops, a UI Panel for AfterEffects used to export motion data and a JavaScript file used to play back the exported motion data in the browser.
+1. As a developer it's difficult to implement motion designs with perfect accuracy.
+2. Due to the difficulty, the original motion design seldom survives implementation.
+3. Because of #2, motion designers either have to accept that their work won't survive the development process, or end up hounding developers to endlessly tweak the animation code until it's as close to the original design as possible.
 
-## AfterEffects Plugin
+This process is not ideal, and in the end it causes needless time spent on re-working animation code rather than letting everybody focus on their area of expertise and artistry with the knowledge that the final product will reflect the original design intention as closely as possible.
 
-First, you will need to install the Cyclops script panel.  
 
-### Install the Script
-Copy `cyclops.jsx` folder into the `ScriptUI Panels` folder for AfterEffects.  By default, you can find the `ScriptUI Panels` folder in the following location:
+### Architecture
 
-##### Windows
-`Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts\ScriptUI Panels`
+Cyclops is comprised of two parts, a script for AfterEffects, and a JavaScript library.  The AfterEffects script is used to export frame data for any animated property in AfterEffects.  The data exported from AfterEffects is then used by the Cyclops JavaScript library to re-create the motion in the browser.
 
-##### Mac
-`Applications/Adobe After Effects <version>/Scripts/ScriptUI Panels`
+AfterEffects --> **Cyclops AE Script** --> JSON Data --> **Cyclops JavaScript** --> Motion!
 
-**Note:** The `ScriptUI Panels` folder may or may not exist, if it doesn't exist you can simply create the folder yourself.
+The motion data is stored as a JSON that captures individual per-frame values for animated properties.  This frame data is read by the Cyclops JavaScript and is used to dyncamically generate a function which will return the same motion dynamics as normalized values.  This function can be dropped into most commonly used animation tools like jQuery's `animate` method, as well as most other popular libraries that support custom tweening functions.
 
-### Run the Script
 
-After you have copied the script, restart AfterEffects.  Open the `Window` menu and select `cyclops.jsx` from the list.
+### Cyclops != AfterEffects Player
 
-### Select a Property for Export
 
-Highlight one of the transform properties for any layer in your composition and click the `Add Property` button in the cyclops UI panel.
+	Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use througout a website.
 
-### Export Data
+It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lenghty sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like Flash or Swify.
 
-Click `Export Properties` to create a JavaScript file containing the data for your motion curves.  This JavaScript file will then be used to recreate the motion curves in the browser.  If you aren't a developer, you will need to work with whomever is writing the code for your project, it's important that you coordinate closely with them (especially when setting up the project for the first time).
+These effects can be adjusted dynamically and applied to any property via JavaScript, but the dynamics of the values over time will match the original animation from AfterEffects.  Think of Cyclops curves just like the handful of common easing functions, but the behavior of the easing is completely customizable.
 
-The Cyclops script will save your export settings when the AfterEffects project is saved, so you will only need to configure the list of properties once and they will be there any time you open the project.
 
-## JavaScript Library
+### Usage
 
-To use cyclops on your page, include the `cyclops.js` script.  This script will create a global `cyclops` object which will expose all of the cyclops related functionality.  You will also need to include any JavaScript files or JSON curve data (exported from the AfterEffects script).
+While this will vary greatly depending on the specifics of your team structure, project, and deployment process, the basics are as follows:
 
-Once you have all the scripts included on you page, you must tell cyclops which curves to load, and decide how you would like to use them.
-
-#### Loading Curve Data
-
-To load curves into Cyclops, simply invoke `cyclops.loadCurves( <curve data> )` and pass in the JavaScript curve data that was exported from AfterEffects.  This will load all named curves into Cyclops.
-
-#### Using Curves
-
-After loading one or more curves into Cyclops, you can access them by invoking `cyclops.getCurve( <name> )` which will return a function.  The function accepts a single float between zero and one, and returns a normalized value which follows the curve from AfterEffects.
-
-#### Example
-
-The following example code will load some curve data, then use it with jQuery to animate the width of an element upon mouse roll-over and roll-out.
-
-	<html>
-	<head>
-		<style>
-		
-		#buttonExample {
-			background:#a0a0a0;
-			position:absolute;
-			width:300px;
-			height:50px;
-			text-align:center;
-		}
-	
-		</style>
-	
-		<script src="roll-over-curve.js"></script>
-		<script src="../../js/cyclops.js"></script>
-		<script src="jquery.js"></script>
-	
-		<script>
-	
-		// Load the curve data into cyclops
-		cyclops.loadCurves(rollovers);
-	
-		// Add the new curve to the jQuery easing object.
-		$.easing.example = cyclops.getCurve("roll-over-scale");
-	
-		$(document).on("ready", function() {
-	
-			// Use the curve with the JQuery animate function.
-			// Notice that the duration of the original curve is used as well.
-			
-			$("#buttonExample").on("mouseenter", function() {
-				$("#buttonExample").stop().animate({"width" : 400}, rollovers["roll-over-scale"].duration, "example");
-			});
-	
-			$("#buttonExample").on("mouseleave", function() {
-				$("#buttonExample").stop().animate({"width" : 300}, rollovers["roll-over-scale"].duration, "example");
-			});
-	
-		});
-	
-		</script>
-	</head>
-	
-	<body>
-		<div id="buttonExample"></div>
-	</body>
-	</html>
+1. Install the Cyclops AfterEffects script.
+2. Create some motion
+3. Export the motion
+4. Load the motion data via JavaScript
+5. Animate HTML elements using the motion.
