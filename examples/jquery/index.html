@@ -1,20 +1,19 @@
 <html>
 <head>
 	<style>
-	
 	#buttonExample {
 		background:#a0a0a0;
 		position:absolute;
-		width:300px;
+		width:200px;
 		height:50px;
 		text-align:center;
 	}
-
 	</style>
 
-	<script src="roll-over-curve.js"></script>
+	<script src="kviz8080.js"></script>
 	<script src="../../js/cyclops.js"></script>
-	<script src="jquery.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 	<script>
 
@@ -22,17 +21,17 @@
 	cyclops.loadCurves(rollovers);
 
 	// Add the new curve to JQuery
-	$.easing.cyclops = cyclops.getCurve("roll-over-scale");
+	$.easing.kviz = cyclops.getCurve("kviz8080");
 
 	$(document).on("ready", function() {
 
 		// Use the curve with the JQuery animate function.
 		$("#buttonExample").on("mouseenter", function() {
-			$("#buttonExample").stop().animate({"width" : 400}, rollovers["roll-over-scale"].duration / 2, "cyclops");
+			$("#buttonExample").stop().animate({"width" : 400}, rollovers["kviz8080"].duration, "kviz");
 		});
 
 		$("#buttonExample").on("mouseleave", function() {
-			$("#buttonExample").stop().animate({"width" : 300}, rollovers["roll-over-scale"].duration, "cyclops");
+			$("#buttonExample").stop().animate({"width" : 200}, rollovers["kviz8080"].duration, "kviz");
 		});
 
 	});

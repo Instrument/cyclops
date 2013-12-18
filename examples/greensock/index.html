@@ -1,0 +1,47 @@
+<html>
+<head>
+	<style>
+	#buttonExample {
+		background:#a0a0a0;
+		position:absolute;
+		width:200px;
+		height:50px;
+		text-align:center;
+	}
+	</style>
+
+	<script src="kviz8080.js"></script>
+	<script src="../../js/cyclops.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+	<script>
+	
+	$(document).on("ready", function() {
+
+		// Load the curve data
+		cyclops.loadCurves(rollovers);
+
+		var kviz = cyclops.getCurve("kviz8080");
+
+		
+		$("#buttonExample").mouseenter(function() {
+			var tweenOver = new TweenLite($("#buttonExample"), (rollovers["kviz8080"].duration / 1000), {width:400, ease:kviz});
+			tweenOver.play();
+		});
+
+		$("#buttonExample").on("mouseout", function() {
+			var tweenOut = new TweenLite($("#buttonExample"), (rollovers["kviz8080"].duration / 1000), {width:200, ease:kviz});
+			tweenOut.play();
+		});
+
+	});
+
+	</script>
+</head>
+
+<body>
+	Cyclops integrated with GreenSock TweenLite
+	<div id="buttonExample"></div>
+</body>
+</html>
