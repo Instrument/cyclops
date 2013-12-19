@@ -1,6 +1,10 @@
-# Cyclops
+![Cyclops](docs/images/cyclops_logo.png "Cyclops")
 
-[Minified JS](https://github.com/Instrument/cyclops/raw/master/js/cyclops.min.js) | [AE Script](https://github.com/Instrument/cyclops/raw/master/aftereffects scripts/cyclops.jsx) | [Docs](https://github.com/Instrument/cyclops/docs)
+---
+
+[Minified JS](https://github.com/Instrument/cyclops/raw/master/js/cyclops.min.js) | [AE Script](https://github.com/Instrument/cyclops/raw/master/aftereffects scripts/cyclops.jsx) | [Documentation](https://github.com/Instrument/cyclops/docs)
+
+---
 
 A tool to export AfterEffects motion for use in JavaScript.  Cyclops aims to solve the following problems commonly associated with motion on the web:
 
