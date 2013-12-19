@@ -21,15 +21,15 @@ Cyclops is comprised of two parts, a script for AfterEffects, and a JavaScript l
 
 AfterEffects --> **Cyclops AE Script** --> JSON Data --> **Cyclops JavaScript** --> Motion!
 
-The motion data is stored as a JSON that captures individual per-frame values for animated properties.  This frame data is read by the Cyclops JavaScript and is used to dyncamically generate a function which will return the same motion dynamics as normalized values.  This function can be dropped into most commonly used animation tools like jQuery's `animate` method, as well as most other popular libraries that support custom tweening functions.
+The motion data is stored as a JSON that captures individual per-frame values for animated properties.  This frame data is read by the Cyclops JavaScript and is used to dynamically generate a function which will return the same motion dynamics as normalized values.  This function can be dropped into most commonly used animation tools like jQuery's `animate` method, as well as most other popular libraries that support custom tweening functions.
 
 
 ### Cyclops != AfterEffects Player
 
 
-> Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use througout a website.
+> Cyclops is meant to create bite-sized pieces of motion like roll-over, loading, and transition effects for use throughout a website.
 
-It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lenghty sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like [Flash](http://www.adobe.com/products/flash.html), [Swiffy](https://www.google.com/doubleclick/studio/swiffy/) or just use pre-rendered video.
+It's important to note that the purpose of Cyclops is to export the _dynamics_ of the motion from AfterEffects for use in code.  It's not built for use as a playback engine for complex and lengthy sequences of animation.  If that is what you need, there are existing tools much better suited for that sort of thing, like [Flash](http://www.adobe.com/products/flash.html), [Swiffy](https://www.google.com/doubleclick/studio/swiffy/) or just use pre-rendered video.
 
 Once loaded in JavaScript, curves can be adjusted dynamically and applied to any property via JavaScript, but the dynamics (the change over time) will match the original animation from AfterEffects.  Think of Cyclops curves just like the handful of standard easing functions, but the behavior of the easing is completely customizable using AfterEffects as the content creation tool.
 

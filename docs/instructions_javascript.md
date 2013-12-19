@@ -2,7 +2,7 @@
 
 To use cyclops on your page, include the `cyclops.js` script.  This script will create a global `cyclops` object which will expose all of the cyclops related functionality.  You will also need to include any JavaScript files or JSON curve data (exported from the AfterEffects script).
 
-Once you have all the scripts included on you page, you must tell cyclops which curves to load, and decide how you would like to use them.
+Once you have all the scripts included on your page, you must tell cyclops which curves to load, and decide how you would like to use them.
 
 ### Loading Curve Data
 

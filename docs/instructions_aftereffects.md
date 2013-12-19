@@ -40,7 +40,7 @@ Once you have created some motion for an element in your composition, highlight 
 
 ![](images/selected-property.png "Title")
 
-Next click **Add Property** in the Cyclops panel and you will be propmted to name the curve for the selected property.  By default the curve name will be the layer name and property name joined with a hyphen.  It's recommended that you choose a short but descriptive curve name that reflects the intended use of the curve.
+Next click **Add Property** in the Cyclops panel and you will be prompted to name the curve for the selected property.  By default the curve name will be the layer name and property name joined with a hyphen.  It's recommended that you choose a short but descriptive curve name that reflects the intended use of the curve.
 
 ![](images/add-property-popup.png "Title")
 
@@ -55,7 +55,7 @@ After you choose a curve name, a new row will appear in the Cyclops panel listin
 
 #### Export as JSON
 
-The curve data can be stored in one of two ways, the first is as what's known as JSON data.  This is a sort of "raw" way of storing data and must be encorporated into your project through some sort of build process, or loaded asynchronously, copied/pasted into another JavaScript file, etc.  In other words, exporting JSON means you still have some work to do to get your project building.  However, it is more flexible for use with tools like Grunt as it is a more pure way to store the curve data.
+The curve data can be stored in one of two ways, the first is as what's known as JSON data.  This is a sort of "raw" way of storing data and must be incorporated into your project through some sort of build process, or loaded asynchronously, copied/pasted into another JavaScript file, etc.  In other words, exporting JSON means you still have some work to do to get your project building.  However, it is more flexible for use with tools like Grunt as it is a more pure way to store the curve data.
 
 #### Export as Named object
 
@@ -78,4 +78,4 @@ Click `Export Properties` to create a JavaScript file from the motion data.  Thi
 
 The Cyclops script will save your export settings when the AfterEffects project is saved, so you will only need to configure the list of properties once and they will be there any time you open the project.
 
-Once your composition and code are set up to use this motion data you will be able to make changes in AfterEffects and simply over-write the old curve data without changing any code.
+Once your composition and code are set up to use this motion data you will be able to make changes in AfterEffects and simply overwrite the old curve data without changing any code.
