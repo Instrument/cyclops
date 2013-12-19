@@ -1,11 +1,11 @@
-# AfterEffects Plugin
+# After Effects Plugin
 
-To create motion data for use with Cyclops, you'll need to install the AfterEffects Cyclops script panel. For more extensive instructions please take a look at [this Adobe Support page](http://helpx.adobe.com/en/after-effects/using/scripts.html), otherwise you can use the summarized instructions listed below.
+To create motion data for use with Cyclops, you'll need to install the After Effects Cyclops script panel. For more extensive instructions please take a look at [this Adobe Support page](http://helpx.adobe.com/en/after-effects/using/scripts.html), otherwise you can use the summarized instructions listed below.
 
 
 ## Install the Script
 
-Copy `cyclops.jsx` folder into the `ScriptUI Panels` folder for AfterEffects.  By default, you can find the `ScriptUI Panels` folder in the following location:
+Copy `cyclops.jsx` folder into the `ScriptUI Panels` folder for After Effects.  By default, you can find the `ScriptUI Panels` folder in the following location:
 
 ##### Windows
 `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts\ScriptUI Panels`
@@ -18,17 +18,17 @@ Copy `cyclops.jsx` folder into the `ScriptUI Panels` folder for AfterEffects.  B
 
 ## Allow Scripts to Write Files
 
-By default, AfterEffects does not allow scripts to create files on your hard drive.  In order for Cyclops to save motion data into a file, this setting must be changed in the AfterEffects preferences.
+By default, After Effects does not allow scripts to create files on your hard drive.  In order for Cyclops to save motion data into a file, this setting must be changed in the After Effects preferences.
 
-To change this setting, open the **General** panel in the AfterEffects Preferences and make sure there is a check mark next to the option titled "Allow Scripts to Write Files and Access Network"
+To change this setting, open the **General** panel in the After Effects Preferences and make sure there is a check mark next to the option titled "Allow Scripts to Write Files and Access Network"
 
-![](images/aftereffects-preferences.png "Title")
+![](images/After Effects-preferences.png "Title")
 
 
 
 ## Run the Script
 
-After you have copied the script and updated the preferences, restart AfterEffects.  To launch the Cyclops panel open the `Window` menu and select `cyclops.jsx` from the list.  This will display the Cyclops window which you can leave as a free floating window or dock with into the AfterEffects UI.
+After you have copied the script and updated the preferences, restart After Effects.  To launch the Cyclops panel open the `Window` menu and select `cyclops.jsx` from the list.  This will display the Cyclops window which you can leave as a free floating window or dock with into the After Effects UI.
 
 ![](images/cyclops-tool-window.png "Title")
 
@@ -76,6 +76,6 @@ Once you have added at least one property to the list and set your export option
 
 Click `Export Properties` to create a JavaScript file from the motion data.  This JavaScript file will be used to reproduce the motion in the browser.  If you aren't a developer, you will need to work with whomever is writing the code for your project, it's important that you coordinate closely with them (especially when setting up the project initially).
 
-The Cyclops script will save your export settings when the AfterEffects project is saved, so you will only need to configure the list of properties once and they will be there any time you open the project.
+The Cyclops script will save your export settings when the After Effects project is saved, so you will only need to configure the list of properties once and they will be there any time you open the project.
 
-Once your composition and code are set up to use this motion data you will be able to make changes in AfterEffects and simply overwrite the old curve data without changing any code.
+Once your composition and code are set up to use this motion data you will be able to make changes in After Effects and simply overwrite the old curve data without changing any code.
