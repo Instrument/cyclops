@@ -22,7 +22,7 @@ By default, After Effects does not allow scripts to create files on your hard dr
 
 To change this setting, open the **General** panel in the After Effects Preferences and make sure there is a check mark next to the option titled "Allow Scripts to Write Files and Access Network"
 
-![](images/After Effects-preferences.png "Title")
+![](images/aftereffects-preferences.png "Title")
 
 
 

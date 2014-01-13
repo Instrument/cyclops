@@ -2,7 +2,7 @@
 
 ---
 
-[Minified JS](https://github.com/Instrument/cyclops/raw/master/js/cyclops.min.js) | [AE Script](https://github.com/Instrument/cyclops/raw/master/After Effects scripts/cyclops.jsx) | [Documentation](https://github.com/Instrument/cyclops/docs)
+[Minified JS](https://github.com/Instrument/cyclops/raw/master/js/cyclops.min.js) | [AE Script](https://github.com/Instrument/cyclops/raw/master/aftereffects scripts/cyclops.jsx) | [Documentation](https://github.com/Instrument/cyclops/docs)
 
 ---
 
@@ -38,7 +38,7 @@ Once loaded in JavaScript, curves can be adjusted dynamically and applied to any
 
 While this will vary greatly depending on the specifics of your team structure, project, and deployment process, the basics are as follows:
 
-1. Install the [Cyclops After Effects script](docs/instructions_After Effects.md).
+1. Install the [Cyclops After Effects script](docs/instructions_aftereffects.md).
 2. Create some motion
 3. Export the motion
 4. [Load the motion data via JavaScript](docs/instructions_javascript.md).
