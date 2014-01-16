@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=160" name="viewport">
+	  <script type="text/javascript">var customPath = "/assets";</script>
+    <script type="text/javascript" src="js/fonts.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>Cyclops</title>
+    <meta name="description" content="Export motion curves from aftereffects into javascript.">
+    <link rel="stylesheet" type="text/css" href="css/cyclops.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+
+    <!-- Include cyclops and your exported curve! -->
+    <script type="text/javascript" src="js/curve.js"></script>
+    <script type="text/javascript" src="js/cyclops.js"></script>
+    <script>
+      var left = 120, right = 280, duration = 1500.0;
+      function forth() {
+        $("#triangle").css({left: left});
+        $("#triangle").animate({left: right}, duration, "curve", back);
+      }
+      function back() {
+        $("#triangle").animate({left: left}, duration, "curve", forth)
+      }
+
+      cyclops.loadCurves(exportedCurve);           // load the curve
+      $.easing.curve = cyclops.getCurve("curve");  // register the curve with jquery
+      $(document).ready(forth);
+    </script>
+  </head>
+
+  <body>
+    <div id="site">
+      <div id="header">
+        <h1 class="logo image">
+          <a href="/" title="Cyclops" role="bookmark">
+            <span class="cyclops-logo">
+              <img width="100%" src="img/cyclops-1500.png" alt="Cyclops">
+            </span>
+          </a>
+        </h1>
+      </div>
+
+      <div id="page">
+        <h2 class="tagline">Export motion curves<br>from After Effects into JavaScript.</h2>
+        <div id="example">
+          <img width="100%" id="stage" src="img/example-stage.png" alt="Example">      
+          <img id="triangle" src="img/triangle.png" alt="Triangle">
+        </div>
+        <p class="explanation">Cyclops is a tool that translates After Effects curves to code,<br>allowing developers to get the motion right from the beginning.</p>
+        <h2 class="get">Get Cyclops</h2>
+        <div id="get">
+          <a href="https://github.com/Instrument/cyclops/zipball/master/aftereffects%20scripts/cyclops.jsx" target="_blank">
+            <img src="img/download.png" alt="Download">
+          </a>
+          <a href="https://github.com/Instrument/cyclops" target="_blank">
+            <img src="img/git.png" alt="Github">
+          </a>
+        </div>
+      </div>
+
+      <div id="footer">
+        <a href="http://weareinstrument.com" target="_blank">
+          <img src="img/teepee.png" alt="Instrument">
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

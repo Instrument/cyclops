@@ -1,0 +1,107 @@
+body {
+  background-color: #05051b;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: NeutraliserSans, Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.8em;
+  font-size: 21px;
+  color: #2a5f6f;
+  margin: 0;
+}
+
+h1 {
+  margin: 0 0 28px;
+}
+
+h1, h2, h3 {
+  font-family: NeutraliserSans-Bold, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.7em;
+  font-size: 24px;
+  color: #ff1629;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  padding: 14px 17px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+p {
+  margin: 0 0 28px;
+}
+
+a {
+  text-decoration: none;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#site {
+  padding: 120px 20px;
+  margin: 0 auto;
+  max-width: 777px;
+}
+
+#header {
+  padding: 0px;
+  padding-bottom: 14px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#page {
+  padding: 0 0 150px;
+}
+
+#example {
+  max-width: none;
+  line-height: 0;
+  text-align: center;
+  padding: 14px;
+}
+
+#triangle {
+  top: -130px;
+  position: relative;
+  display: inline-block;
+}
+
+#get {
+  line-height: 0;
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+#get a {
+  display: inline-block;
+  width: 196px;
+  margin: 14px 0;
+}
+
+.tagline {
+  margin: 112px 0;
+}
+
+.explanation {
+  text-align: center;
+  padding: 14px;
+  margin: 61px 0 140px 0;
+}
+
+#footer {
+  line-height: 0;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
