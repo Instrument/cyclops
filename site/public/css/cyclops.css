@@ -69,12 +69,12 @@ a {
   line-height: 0;
   text-align: center;
   padding: 14px;
+  position: relative;
 }
 
 #triangle {
-  top: -130px;
-  position: relative;
-  display: inline-block;
+  top: 0px;
+  position: absolute;
 }
 
 #get {

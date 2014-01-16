@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en-US">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=160" name="viewport">
-	  <script type="text/javascript">var customPath = "/assets";</script>
+    <script type="text/javascript">var customPath = "/assets";</script>
     <script type="text/javascript" src="js/fonts.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <meta charset="utf-8">
@@ -12,22 +12,35 @@
     <link rel="stylesheet" type="text/css" href="css/cyclops.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
-    <!-- Include cyclops and your exported curve! -->
+    <!-- Include cyclops and your exported curve -->
     <script type="text/javascript" src="js/curve.js"></script>
     <script type="text/javascript" src="js/cyclops.js"></script>
+
     <script>
-      var left = 120, right = 280, duration = 1500.0;
+      // Load the curve into cyclops (here from the contents of js/curve.js above)
+      cyclops.loadCurves(exportedCurve);           
+
+      // Register the curve with jQuery
+      $.easing.curve = cyclops.getCurve("curve");
+
+      // Perform the animation!
+      var ratio = 1.0, top = 100, left = 430, right = 600, width = 709, duration = 1500.0;
+      function scale(n) {return Math.floor(n * ratio)};
       function forth() {
-        $("#triangle").css({left: left});
-        $("#triangle").animate({left: right}, duration, "curve", back);
+        $("#triangle").animate({left: scale(right) + 10}, duration, "curve", back);
       }
       function back() {
-        $("#triangle").animate({left: left}, duration, "curve", forth)
+        $("#triangle").animate({left: scale(left) + 20}, duration, "curve", forth)
+      }
+      function init() {
+        ratio = $("#example").width() / width;
+        var top = 100, left = 430, right = 590, duration = 1500.0;
+        $("#triangle").stop().css({left: scale(left) + 20, top: scale(top) + 10});
+        forth();
       }
 
-      cyclops.loadCurves(exportedCurve);           // load the curve
-      $.easing.curve = cyclops.getCurve("curve");  // register the curve with jquery
-      $(document).ready(forth);
+      $(window).resize(init);
+      $(document).ready(init);
     </script>
   </head>
 
@@ -45,9 +58,9 @@
 
       <div id="page">
         <h2 class="tagline">Export motion curves<br>from After Effects into JavaScript.</h2>
-        <div id="example">
+        <div id="example" width="100%">
           <img width="100%" id="stage" src="img/example-stage.png" alt="Example">      
-          <img id="triangle" src="img/triangle.png" alt="Triangle">
+          <img width="12%" id="triangle" src="img/triangle.png" alt="Triangle">
         </div>
         <p class="explanation">Cyclops is a tool that translates After Effects curves to code,<br>allowing developers to get the motion right from the beginning.</p>
         <h2 class="get">Get Cyclops</h2>
